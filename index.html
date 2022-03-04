@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crypto Times</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="startTimer()">
+    <header>
+        <div>
+            <div class="topnav" id="myTopnav">
+                <a href="#home" class="active"><span>Home</span></a>
+                <a href="#recent"><span>Recent</span></a>
+                <a href="#headlines"><span>Headlines</span></a>
+                <a href="#markets"><span>Markets</span></a>
+                <a href="#contact"><span>Contact</span></a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                          x.className += " responsive";
+                        } else {
+                          x.className = "topnav";
+                        }
+                    }
+                </script>
+            </div>
+            <section class="cycle-news">
+                    <article class="main-news-text">
+                        <div class="text-contain">
+                            <h1 class="headlines-h1">This Week</h1>
+                            <h1 style="margin: 0;"><a style="color: #333; text-decoration: none;" id="content" href="#one"></a></h1>
+                            <span id="authors"></span>
+                            <script>
+                            var MessagesAuth = [
+                            "By: William Suberg",
+                            "By: Andrey Sergeenkov",
+                            "By: Zack Voell",
+                            "By: Dylan LeClair & Sam Rule",
+                            ];
+
+                            function displayMessages() {
+                                var TIMER_INTERVAL = 5000;
+                                var FADE_INTERVAL = 0;
+
+                                var $div = $("#authors");
+                                $div.text(MessagesAuth[0]);
+
+                                var messageCounter = 1;
+
+                                setInterval(function() {
+                                    if (messageCounter === MessagesAuth.length) {
+                                    messageCounter = 0;
+                                }
+                                
+                                    $div.fadeOut(FADE_INTERVAL, function() {
+                                    $div.text(MessagesAuth[messageCounter]);
+                                    $div.fadeIn(FADE_INTERVAL);
+                                    messageCounter++;
+                                    });
+                                }, TIMER_INTERVAL)
+                                }
+                                displayMessages();
+                            </script>
+                        </div>
+                        <script src="timed-text.js"></script>
+                    </article>
+                    <div>
+                        <script type = "text/javascript">
+                            function displayNextImage() {
+                                x = (x === images.length - 1) ? 0 : x + 1;
+                                document.getElementById("img").src = images[x];
+                            }
+                  
+                            function displayPreviousImage() {
+                                x = (x <= 0) ? images.length - 1 : x - 1;
+                                document.getElementById("img").src = images[x];
+                            }
+                  
+                            function startTimer() {
+                                setInterval(displayNextImage, 5000);
+                            }
+                  
+                            var images = [], x = -1;
+
+                            images[0] = "headline2.jpg";
+                            images[1] = "headline3.png";
+                            images[2] = "headline4.png";
+                            images[3] = "headline1.jpg"
+                        </script>
+                        <img class="image-carousel" id="img" src="headline1.jpg">
+                    </div>
+             </section>
+        </div>
+        <div>
+            <main class="push">
+                <section>
+                    <h1><span class="the">The</span><br><span class="crypto">Crypto</span><br><span class="times">Times</span></h1>
+                </section>
+            </main>
+        </div>
+    </header>
+    <section class="card-list" id="one">
+        <article class="card" id="recent">
+            <header class="card-header">
+                <a href="https://www.nasdaq.com/articles/ukraine-legalizes-bitcoin">
+                    <h2 class="space">Ukraine legalizes Bitcoin</h2></a>
+                <p>FEB 17, 2022</p>
+                <img src="https://v2.cimg.co/news/70842/63994/fae1cb7969.jpg"
+                target="_blank" style="margin-top: 50px;" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Namcios
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <a href="https://www.independent.co.uk/life-style/gadgets-and-tech/us-kazakhstan-bitcoin-mining-rise-b1886377.html">
+                    <h2>Bitcoin mining operations rise in US and Khazakhstan after China ban</h2></a>
+                <p>Feb 18 2022</p>
+                <img style="margin-bottom: 10px;" src="https://static.independent.co.uk/2021/07/19/11/GettyImages-1234052151.jpg?quality=75&width=1200&auto=webp"
+                target="_blank" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Vishwam Sankaran
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <a href="https://www.independent.co.uk/life-style/gadgets-and-tech/us-kazakhstan-bitcoin-mining-rise-b1886377.html">
+                    <h2>Here are the BTC price levels to watch with Bitcoin on $40K cliff</h2></a>
+                <p>Feb 18 2022</p>
+                <img style="margin-bottom: 10px;" src="https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjItMDIvNzk2NmIyYTItYWQ1My00OGYwLWIwNzYtOWVhMjU1ZDk2YjAxLmpwZw==.jpg"
+                target="_blank" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Will McKinnon
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <a href="https://www.coindesk.com/learn/investing-in-crypto-alternatives-to-bitcoin-and-ether/">
+                    <h2>Investing in Crypto: Alternatives to Bitcoin and Ether</h2></a>
+                <p>Feb 18 2022</p>
+                <img style="height: 42%; margin-top: 2px;" src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/DIUBAKZSLVD7FPRMQQQI6OLKGE.jpg"
+                target="_blank" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Peter Peytavin
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <a href="https://bitcoinmagazine.com/business/at-home-bitcoin-mining-is-surging">
+                    <h2>The popularity of retail bitcoin mining is surging</h2></a>
+                <p>Feb 18 2022</p>
+                <img style="margin-top: 28px; height: 42%; margin-bottom: 35px;" src="https://www.nasdaq.com/sites/acquia.prod/files/bitcoin_magazine/img_6308.png?1394354"
+                target="_blank" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Logan Smith
+                </div>
+            </div>
+        </article>
+        <article class="card">
+            <header class="card-header">
+                <a href="https://www.bloomberg.com/news/articles/2022-02-19/sec-fight-over-xrp-tokens-turns-to-ripple-legal-memos-from-2012">
+                    <h2>SEC Fight Over XRP Tokens Turns to Ripple Legal Memos From 2012</h2></a>
+                <p>Feb 18 2022</p>
+                <img style="margin-top: 3px; height: 41.9%; margin-bottom: 27px;" src="https://cdn.coingape.com/wp-content/uploads/2021/11/17040248/ripple.jpg"
+                target="_blank" alt="">
+            </header>
+            <div class="card-author">
+                <div class="author-name">
+                    <div class="author-name-prefix">Author</div>
+                    Olga Kharif
+                </div>
+            </div>
+        </article>
+    </section>
+    <h1 id="headlines" style="margin-bottom: 100px; margin-top: 100px; text-align: center;">Headlines</h1>
+    <section>
+    <div class="container-1">
+        <div>
+            <img src="https://www.somagnews.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-29-at-21.08.17.png"
+            target="_blank" alt="">
+        </div>
+        <article>
+            <a href="https://fortune.com/2022/02/18/ukraine-legalizes-cryptocurrency-bitcoin-russia-digital-assets/">
+                <h1>Ukraine already trades more crypto than fiat currency. Now assets like Bitcoin are officially legal</h1></a>
+            <div class="author-date-1">
+                <span>Author: Eamon Barrett</span>
+                <br><span>Feb 19th 2022</span>
+            </div>
+        </article>
+    </div>
+    <script src="./expand.js"></script>
+    </section>
+    <section>
+    <div class="container-1 con-push">
+        <div>
+            <img src="https://www.nasdaq.com/sites/acquia.prod/files/bitcoin_magazine/bitcoins-political-breakthrough-raises-questions-about-its-regulatory-futurearizona.png?1896927607"
+            target="_blank" alt="">
+        </div>
+        <article>
+            <a href="https://bitcoinmagazine.com/culture/questions-about-bitcoin-legal-tender-in-us">
+                <h1>BITCOIN'S POLITICAL BREAKTHROUGH RAISES QUESTIONS ABOUT ITS REGULATORY FUTURE</h1></a>
+            <div class="author-date-2">
+                <span>Author: Mike Hobart</span>
+                <br><span>Feb 19th 2022</span>
+            </div>
+        </article>
+    </div>
+    </section>
+    <section class="container-1 con-push">
+        <div>
+            <img src="https://bitcoinmagazine.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTgzMjM5NTgzMDQxODU2NTUw/img_4392.png"
+            target="_blank" alt="">
+        </div>
+        <article>
+            <h1>ILLINOIS, GEORGIA WANT TO GIVE TAX CUTS FOR BITCOIN MINERS</h1>
+            <div class="author-date-3">
+                <span>Author: Namicos</span>
+                <br><span>Feb 19th 2022</span>
+            </div>
+        </article>
+    </section>
+    <h1 id="markets" style="margin-bottom: -100px; margin-top: 100px; text-align: center;">Coin Markets & News</h1>
+    <div class="container">
+        <div class="coin-navigation">
+            <div class="menu">
+                <a class="button_active"><span>BTC<span></a>
+                <a><span>ETH<span></a>
+                <a><span>USDT</span></a>
+                <a><span>BNB</span></a>
+                <a><span>SOL</span></a>
+                <a><span>ADA</span></a>
+                <a><span>XRP</span></a>
+                <a><span>DOGE</span></a>
+                <a><span>AVAX</span></a>
+                <a><span>LTC</span></a>
+                <a><span>SHIB</span></a>
+            </div>
+        </div>
+        <section class="content">
+            <div class="content_inside content_inside_active">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true"
+                data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                
+            <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://miro.medium.com/max/1400/1*s8EgntSlYEbaJ1d9lJTADQ.png" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.coindesk.com/markets/2022/02/25/bitcoins-implied-volatility-suggests-recovery-set-to-continue/" target="__blank">
+                        <h1>Bitcoin's Implied Volatility Suggests Recovery Set to Continue</h1></a>
+                        <br><span>Author: Omkar Godbole</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="1027" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://images.ctfassets.net/q5ulk4bp65r7/3thWklmvu2WmAHJh0k1AcC/51521feeef170d94a446fbec6f262912/what-is-ethereum.png" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.marketwatch.com/story/ethereum-leads-way-as-most-big-cryptocurrencies-post-drops-01646319661-054868cc12e5" target="__blank">
+                        <h1>Ethereum leads way as most big cryptocurrencies post drops</h1></a>
+                        <br><span>By MarketWatch Automation</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="825" data-base="USD" data-secondary="" data-ticker="true"
+                data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/1280px-Tether_Logo.svg.png" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://cointelegraph.com/news/usdt-records-new-all-time-high-against-russian-ruble-as-inflation-hits" target="__blank">
+                        <h1>USDT records new all-time high against Russian ruble as inflation hits</h1></a>
+                        <br><span>Author: ARIJIT SARKAR</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="1839" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://bnbsmartchain.com/wp-content/uploads/2020/06/Cross-Chain-Transfer.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.coindesk.com/business/2022/03/02/dialect-raises-41m-to-bring-smart-messaging-to-solana/" target="__blank">
+                        <h1>Binance Smart Chain and Binance Chain become BNB Chain</h1></a>
+                        <br><span>Author: PRASHANT JHA</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="5426" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://i.ytimg.com/vi/RZszqxOIn4I/maxresdefault.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.coindesk.com/business/2022/03/02/dialect-raises-41m-to-bring-smart-messaging-to-solana/" target="__blank">
+                        <h1>Dialect Raises $4.1M to Bring 'Smart Messaging' to Solana</h1></a>
+                        <br><span>By Sam Kessler</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2010" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://static.cryptobriefing.com/wp-content/uploads/2022/03/02093127/cardano-ski-cover.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://cryptobriefing.com/new-cardano-dex-hopes-to-overcome-chains-scaling-woes/" target="__blank">
+                        <h1>New Cardano DEX Hopes to Overcome Chain's Scaling Woes</h1></a>
+                        <br><span>by Stefan Stankovic</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="52" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://xrpcommunity.blog/content/images/2018/06/Untitled-design--15-.png" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://u.today/xrp-value-increases-by-10-despite-new-developments-in-ripple-lawsuit" target="__blank">
+                        <h1>XRP Value Increases by 10% Despite New Developments in Ripple Lawsuit</h1></a>
+                        <br><span>by Tomiwabold Olajide</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="74" data-base="USD" data-secondary="" 
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://timestabloid.com/wp-content/uploads/2022/03/Dogecoin-DOGE-Ukraine-1280x720.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.cnbc.com/2022/03/02/ukraine-dogecoin-other-cryptocurrencies-accepted-for-donations.html" target="__blank">
+                        <h1>Ukraine accepts dogecoin, other cryptocurrencies for donations as funding rises to $35 million</h1></a>
+                        <br><span>by Arjun Kharpal</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="5805" data-base="USD" data-secondary=""
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://www.altcoinbuzz.io/wp-content/uploads/2021/06/avalanche.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://cointelegraph.com/news/avalanche-blockchain-now-accessible-to-4-5m-users-across-wirex-payment-ecosystem" target="__blank">
+                        <h1>Avalanche blockchain now accessible to 4.5M users across Wirex payment ecosystem</h1></a>
+                        <br><span>Author: ZHIYUAN SUN</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2" data-base="USD" data-secondary="" 
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">
+                    <div class="first-50">
+                        <img src="https://i.ytimg.com/vi/dthZPZ4Z7s8/maxresdefault.jpg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.fxstreet.com/cryptocurrencies/news/litecoin-price-can-rally-23-if-ltc-buyers-can-shatter-these-hurdles-202203030958" target="__blank">
+                        <h1>Litecoin price can rally 23% if LTC buyers can shatter these hurdles</h1></a>
+                        <br><span>by Will Hanson</span>
+                    </div>
+                </article>
+            </div>
+            <div class="content_inside">
+                <h1 style="text-align: center;">Markets</h1>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div class="coinmarketcap-currency-widget" data-currencyid="5994" data-base="USD" data-secondary="" 
+                data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                
+                <h1 style="text-align: center;">News</h1>
+                <article class="coin-news">     
+                    <div class="first-50">
+                        <img src="https://coinit.com.au/wp-content/uploads/2021/09/Shiba-token-shib-i0FwmQ.jpeg" alt="">
+                    </div>
+                    <div class="second-50">
+                        <a href="https://www.fxstreet.com/cryptocurrencies/news/shiba-inu-price-to-kickstart-37-climb-but-shib-will-face-multiple-challenges-202203030406" target="__blank">
+                        <h1>Shiba Inu price to kickstart 37% climb but SHIB will face multiple challenges</h1></a>
+                        <br><span>by Sarah Tran</span>
+                    </div>
+                </article>
+            </div>
+            <script>
+                let button = document.querySelectorAll('.menu a');
+                let content_inside = document.querySelectorAll('.content_inside');
+                
+                Array.from(button).forEach(function(buttonArray, i) {
+                buttonArray.addEventListener('click', function() {
+                
+                Array.from(button).forEach(buttonAll => buttonAll.classList.remove('button_active'));
+                    
+                Array.from(content_inside).forEach(content_insideAll => content_insideAll.classList.remove('content_inside_active'));
+                    
+                button[i].classList.add('button_active'); 
+                    
+                content_inside[i].classList.add('content_inside_active');  
+                });
+                });
+            </script>
+        </section>
+    </div>
+</body>
+</html>
